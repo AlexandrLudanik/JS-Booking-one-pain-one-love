@@ -1,0 +1,23 @@
+{
+  "name": "page-object-pattern-example-protractor-mocha",
+  "version": "1.0.0",
+  "description": "a simple example of page objects use with protractor with ES classes",
+  "main": "index.js",
+  "scripts": {
+    "remove-logs": "node ./test/utils/cleanup/logsCleaner.js",
+    "postinstall": "webdriver-manager update --versions.standalone=3.4.0",
+    "pretest": "npm run remove-logs",
+    "test": "protractor ./test/config/protractor.config.js --disableChecks"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "fs-extra": "^8.1.0",
+    "mocha": "^6.2.0",
+    "protractor": "^5.4.2",
+    "winston": "^3.2.1",
+    "yargs": "^14.0.0"
+  },
+  "devDependencies": {
+    "chai-spies": "^1.0.0"
+  }
+}

@@ -27,11 +27,10 @@ class HomePage extends BasePage {
     };
 
     async isYourLogoAccountExist() {
-        let EC = protractor.ExpectedConditions;
-        await browser.wait(EC.presenceOf(this.yourAccountLogo.element), 5000);
+        await this.yourAccountLogo.wait();
         const isYourAccountVisible = await this.yourAccountLogo.isDisplayed();
         return isYourAccountVisible;
-    }
+    };
 };
 
 module.exports = HomePage;

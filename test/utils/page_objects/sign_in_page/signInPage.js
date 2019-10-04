@@ -10,34 +10,34 @@ class SignInPage {
         this.passwordErrorMessade = new Element('Password Error message', "//*[@id='password-error']");
     };
 
-    typeLogin(login){
+    async typeLogin(login){
+        await this.emailField.wait();
         return this.emailField.typeText(login);
     };
 
-    clickNextButton(){
+    async clickNextButton(){
+        await this.nextButton.wait();
         return this.nextButton.click();
     };
 
     async typePassword(password){
-        let EC = protractor.ExpectedConditions;
-        await browser.wait(EC.presenceOf(this.passwordField.element), 5000);
+        await this.passwordField.wait();
         return this.passwordField.typeText(password);
     };
 
-    clickSignInButton(){
+    async clickSignInButton(){
+        await this.signInButton.wait();
         return this.signInButton.click();
     };
 
     async isLoginErrorExist(){
-        let EC = protractor.ExpectedConditions;
-        await browser.wait(EC.presenceOf(this.loginErrorMessade.element), 5000);
+        await this.loginErrorMessade.wait();
         const isLoginErrorVisible = await this.loginErrorMessade.isDisplayed();
         return isLoginErrorVisible;
     };
 
     async isPasswordErrorExist(){
-        let EC = protractor.ExpectedConditions;
-        await browser.wait(EC.presenceOf(this.passwordErrorMessade.element), 5000);
+        await this.passwordErrorMessade.wait();
         const isPasswordErrorVisible = await this.passwordErrorMessade.isDisplayed();
         return isPasswordErrorVisible;
     };

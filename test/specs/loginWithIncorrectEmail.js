@@ -18,5 +18,4 @@ describe('Login with incorrectEmail', function () {
         const isErrorLoginMessageExist = await PageFactory.getPage('SignIn').isLoginErrorExist();
         expect(isErrorLoginMessageExist).to.be.equal(true);
     });
-
 });

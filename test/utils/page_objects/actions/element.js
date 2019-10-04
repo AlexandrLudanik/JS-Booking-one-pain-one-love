@@ -4,7 +4,7 @@ class Element {
     constructor(elementName, xpath) {
         this.element = element(By.xpath(xpath));
         this.elementName = elementName;
-    }
+    };
 
     click() {
         logger.logger.info(`Clicking "${this.elementName}"`);
@@ -26,6 +26,11 @@ class Element {
         const isDisplayed = await this.element.isDisplayed();
         logger.logger.info(`"${this.elementName}" text is displayed`);
         return isDisplayed;
+    };
+
+    async wait(){
+        let EC = protractor.ExpectedConditions;
+        await browser.wait(EC.presenceOf(this.element), 5000);
     };
 };
 

@@ -8,8 +8,7 @@ class Header {
     };
 
     async clickSignInButton() {
-        let EC = protractor.ExpectedConditions;
-        await browser.wait(EC.presenceOf(this.signInButton.element), 5000);
+        await this.signInButton.wait();
         return this.signInButton.click();
     }
 };

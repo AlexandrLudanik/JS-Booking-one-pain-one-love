@@ -2,8 +2,8 @@
 - Node version 8 or above
 - Java
 
-#Installation
+# Installation
 - npm install
 
-#Run tests
+# Run tests
 - npm run test

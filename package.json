@@ -1,5 +1,5 @@
 {
-  "name": "page-object-pattern-example-protractor-mocha",
+  "name": "page-object-pattern-example-protractor-mocha-booking.com",
   "version": "1.0.0",
   "description": "a simple example of page objects use with protractor with ES classes",
   "main": "index.js",
@@ -9,6 +9,16 @@
     "pretest": "npm run remove-logs",
     "test": "protractor ./test/config/protractor.config.js --disableChecks"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandrLudanik/JS-Booking-one-pain-one-love.git"
+  },
+  "author": "Alexandr Ludanik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexandrLudanik/JS-Booking-one-pain-one-love/issues"
+  },
+  "homepage": "https://github.com/AlexandrLudanik/JS-Booking-one-pain-one-love#readme",
   "dependencies": {
     "chai": "^4.2.0",
     "fs-extra": "^8.1.0",

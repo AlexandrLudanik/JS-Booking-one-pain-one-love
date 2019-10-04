@@ -2,8 +2,8 @@
 const logger = require('../../../config/logger.config');
 
 class Element {
-    constructor(elementName, selector){
-        this.element = element(By.xpath(selector));
+    constructor(elementName, xpath){
+        this.element = element(By.xpath(xpath));
         this.elementName = elementName;
     }
     click(){
@@ -18,7 +18,7 @@ class Element {
     };
 
     async typeText(text){
-        logger.logger.info(`Type ${text} to ${this.elementName}`)
+        logger.logger.info(`Type ${text} to ${this.elementName}`);
         return await this.element.sendKeys(text);
     };
 
@@ -26,7 +26,7 @@ class Element {
         const isDisplayed = await this.element.isDisplayed();
         logger.logger.info(`${this.elementName} element is displayed ${isDisplayed.toString()}`);
         return isDisplayed;
-    }
+    };
 };
 
 module.exports = Element;

@@ -5,7 +5,6 @@ const logger = require('../../../config/logger.config');
 class HomePage extends BasePage{
     constructor(){
         super();
-        this.url = "https://www.booking.com";
         this.searchField = new Element('Search destination field', "//*[@id='ss']");
         this.destinationCity = 'Minsk';
         this.searchButton = new Element('Button "Search"', "//*[text()='Search']/..");
@@ -14,7 +13,7 @@ class HomePage extends BasePage{
     };
 
     open(url) {
-        return super.open(this.url);
+        return super.open(url);
     };
 
     typeDestinationPlace(){

@@ -18,9 +18,9 @@ class SignInPage {
         return this.nextButton.click();
     };
 
-    typePassword(password){
+    async typePassword(password){
         let EC = protractor.ExpectedConditions;
-        browser.wait(EC.presenceOf(this.passwordField.element), 5000);
+        await browser.wait(EC.presenceOf(this.passwordField.element), 5000);
         return this.passwordField.typeText(password);
     };
 
@@ -30,14 +30,14 @@ class SignInPage {
 
     async isLoginErrorExist(){
         let EC = protractor.ExpectedConditions;
-        browser.wait(EC.presenceOf(this.loginErrorMessade.element), 5000);
+        await browser.wait(EC.presenceOf(this.loginErrorMessade.element), 5000);
         const isLoginErrorVisible = await this.loginErrorMessade.isDisplayed();
         return isLoginErrorVisible;
     };
 
     async isPasswordErrorExist(){
         let EC = protractor.ExpectedConditions;
-        browser.wait(EC.presenceOf(this.passwordErrorMessade.element), 5000);
+        await browser.wait(EC.presenceOf(this.passwordErrorMessade.element), 5000);
         const isPasswordErrorVisible = await this.passwordErrorMessade.isDisplayed();
         return isPasswordErrorVisible;
     };

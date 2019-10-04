@@ -2,6 +2,8 @@ exports.config = {
 
     directConnect: true,
 
+    restartBrowserBetweenTests: true,
+
     framework: 'mocha',
 
     specs: [

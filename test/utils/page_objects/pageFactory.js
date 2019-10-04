@@ -11,7 +11,7 @@ class PageFactory {
                 return new SignInPage();
             default:
                 return new BasePage();
-        };
+        }
     };
 };
 

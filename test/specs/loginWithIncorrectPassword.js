@@ -1,10 +1,9 @@
-const expect =require('chai').expect;
+const {expect} = require('chai');
 const PageFactory = require('../utils/page_objects/pageFactory');
 
 describe('Login with incorrect password', async function () {
 
-    const url = "https://www.booking.com";
-    const login ='sysrq08884@mail.ru';
+    const login = 'sysrq08884@mail.ru';
     const incorrectPassword = 'Testboking';
 
     beforeEach(function () {
@@ -13,7 +12,7 @@ describe('Login with incorrect password', async function () {
     });
 
     it('Should show Error Password message when we type incorrect password', async function () {
-        await PageFactory.getPage('Home').open(url);
+        await PageFactory.getPage('Home').open();
         await PageFactory.getPage('Home').Header.clickSignInButton();
         await PageFactory.getPage('SignIn').typeLogin(login);
         await PageFactory.getPage("SignIn").clickNextButton();

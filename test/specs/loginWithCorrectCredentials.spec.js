@@ -1,10 +1,9 @@
-const expect = require("chai").expect;
+const {expect} = require("chai");
 const PageFactory = require("../utils/page_objects/pageFactory");
 
 describe("Login with correct credentials", function () {
 
-    const url = "https://www.booking.com";
-    const login ='sysrq08884@mail.ru';
+    const login = 'sysrq08884@mail.ru';
     const password = 'Testbooking';
 
     beforeEach(function () {
@@ -12,12 +11,8 @@ describe("Login with correct credentials", function () {
         return browser.manage().window().maximize();
     });
 
-    // afterEach(function () {
-    //     browser.close();
-    // });
-
     it('should login with correct credentials', async function () {
-        await PageFactory.getPage("Home").open(url);
+        await PageFactory.getPage("Home").open();
         await PageFactory.getPage("Home").Header.clickSignInButton();
         await PageFactory.getPage('SignIn').typeLogin(login);
         await PageFactory.getPage('SignIn').clickNextButton();

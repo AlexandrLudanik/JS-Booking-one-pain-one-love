@@ -1,9 +1,8 @@
-const expect = require('chai').expect;
+const {expect} = require('chai');
 const PageFactory = require('../utils/page_objects/pageFactory');
 
 describe('Login with incorrectEmail', function () {
 
-    const url = "https://www.booking.com";
     const incorrectLogin = 'sysrq0884@mail.ru';
 
     beforeEach(function () {
@@ -12,7 +11,7 @@ describe('Login with incorrectEmail', function () {
     });
 
     it('Should show Error email message when we type incorrect email', async function () {
-        await PageFactory.getPage("Home").open(url);
+        await PageFactory.getPage("Home").open();
         await PageFactory.getPage("Home").Header.clickSignInButton();
         await PageFactory.getPage('SignIn').typeLogin(incorrectLogin);
         await PageFactory.getPage('SignIn').clickNextButton();

@@ -9,7 +9,6 @@ class HomePage extends BasePage {
         this.searchButton = new Element('Button "Search"', "//*[text()='Search']/..");
         this.yourAccountLogo = new Element('Logo "Your account"', "//*[@id='current_account']");
         this.url = "https://www.booking.com";
-
     };
 
     open(url) {
@@ -17,19 +16,18 @@ class HomePage extends BasePage {
     };
 
     typeDestinationPlace(city) {
-        logger.logger.info(`Type place destination "${city}"`);
+        logger.info(`Type place destination "${city}"`);
         this.searchField.typeText(this.destinationCity);
     };
 
     clickSearchButton() {
-        logger.logger.info(`Clicking ${this.searchButton}`);
+        logger.info(`Clicking ${this.searchButton}`);
         this.searchButton.click();
     };
 
     async isYourLogoAccountExist() {
         await this.yourAccountLogo.wait();
-        const isYourAccountVisible = await this.yourAccountLogo.isDisplayed();
-        return isYourAccountVisible;
+        return await this.yourAccountLogo.isDisplayed();
     };
 };
 

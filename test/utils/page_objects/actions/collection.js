@@ -8,13 +8,13 @@ class Collection {
 
     async getCount() {
         const collectionCount = await this.collection.count();
-        logger.logger.info(`Count of ${this.elementName} is ${collectionCount}`);
+        logger.info(`Count of ${this.elementName} is ${collectionCount}`);
         return collectionCount;
     };
 
     async getTexts() {
         const arrayOfCollectionTexts = await this.collection.getText();
-        logger.logger.info(`Text of "${this.collection}" are [${arrayOfCollectionTexts}]`);
+        logger.info(`Text of "${this.collection}" are [${arrayOfCollectionTexts}]`);
         return arrayOfCollectionTexts;
     };
 
@@ -24,7 +24,7 @@ class Collection {
         if (elementToClickIndex === -1) {
             throw new Error(`No element with [${textToClick}] text found`);
         }
-        logger.logger.info(`Clicking "${textToClick}" text in "${this.elementName}"`);
+        logger.info(`Clicking "${textToClick}" text in "${this.elementName}"`);
         return this.collection.get(elementToClickIndex).click();
     };
 };

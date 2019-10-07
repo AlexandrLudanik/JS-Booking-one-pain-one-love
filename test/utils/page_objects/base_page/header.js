@@ -10,7 +10,7 @@ class Header {
     async clickSignInButton() {
         await this.signInButton.wait();
         return this.signInButton.click();
-    }
+    };
 };
 
 module.exports = Header;

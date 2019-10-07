@@ -32,14 +32,12 @@ class SignInPage {
 
     async isLoginErrorExist(){
         await this.loginErrorMessade.wait();
-        const isLoginErrorVisible = await this.loginErrorMessade.isDisplayed();
-        return isLoginErrorVisible;
+        return await this.loginErrorMessade.isDisplayed();
     };
 
     async isPasswordErrorExist(){
         await this.passwordErrorMessade.wait();
-        const isPasswordErrorVisible = await this.passwordErrorMessade.isDisplayed();
-        return isPasswordErrorVisible;
+        return await this.passwordErrorMessade.isDisplayed();
     };
 };
 

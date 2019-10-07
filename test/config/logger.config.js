@@ -9,6 +9,4 @@ const logger = winston.createLogger({
     format: winston.format.simple()
 });
 
-module.exports = {
-    logger: logger
-};
+module.exports = logger

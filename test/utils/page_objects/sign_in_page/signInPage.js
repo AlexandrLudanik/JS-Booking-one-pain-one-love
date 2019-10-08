@@ -42,4 +42,3 @@ class SignInPage {
 };
 
 module.exports = SignInPage;
-

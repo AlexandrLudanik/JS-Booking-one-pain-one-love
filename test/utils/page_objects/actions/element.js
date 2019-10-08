@@ -6,9 +6,9 @@ class Element {
         this.elementName = elementName;
     };
 
-    click() {
+    async click() {
         logger.info(`Clicking "${this.elementName}"`);
-        return this.element.click();
+        return await this.element.click();
     };
 
     async getText() {
@@ -30,6 +30,17 @@ class Element {
     async wait(){
         let EC = protractor.ExpectedConditions;
         await browser.wait(EC.presenceOf(this.element), 5000);
+    };
+
+    async switchTab() {
+        let currentHandle = await browser.driver.getWindowHandle();
+        let arrayOfHandles = await browser.driver.getAllWindowHandles();
+        let indexOfCurrentHandle = arrayOfHandles.indexOf(currentHandle);
+        console.log(indexOfCurrentHandle);
+        let indexOfTabToSwitchTo = ++indexOfCurrentHandle;
+        console.log(indexOfTabToSwitchTo);
+        const handleToSwitchTo = arrayOfHandles[indexOfTabToSwitchTo];
+        return browser.driver.switchTo().window(handleToSwitchTo);
     };
 };
 

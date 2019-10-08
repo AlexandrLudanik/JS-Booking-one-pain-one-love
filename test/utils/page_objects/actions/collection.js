@@ -1,8 +1,8 @@
 const logger = require('../../../config/logger.config');
 
 class Collection {
-    constructor(elementName, selector) {
-        this.collection = element.all(by.css(selector));
+    constructor(elementName, xpath) {
+        this.collection = element.all(By.xpath(xpath));
         this.elementName = elementName;
     };
 
@@ -26,6 +26,11 @@ class Collection {
         }
         logger.info(`Clicking "${textToClick}" text in "${this.elementName}"`);
         return this.collection.get(elementToClickIndex).click();
+    };
+
+    async wait(){
+        let EC = protractor.ExpectedConditions;
+        await browser.wait(EC.presenceOf(this.collection), 5000);
     };
 };
 

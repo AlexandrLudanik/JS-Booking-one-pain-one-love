@@ -36,9 +36,7 @@ class Element {
         let currentHandle = await browser.driver.getWindowHandle();
         let arrayOfHandles = await browser.driver.getAllWindowHandles();
         let indexOfCurrentHandle = arrayOfHandles.indexOf(currentHandle);
-        console.log(indexOfCurrentHandle);
         let indexOfTabToSwitchTo = ++indexOfCurrentHandle;
-        console.log(indexOfTabToSwitchTo);
         const handleToSwitchTo = arrayOfHandles[indexOfTabToSwitchTo];
         return browser.driver.switchTo().window(handleToSwitchTo);
     };

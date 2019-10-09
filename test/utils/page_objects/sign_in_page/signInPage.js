@@ -1,11 +1,11 @@
-const Element = require('../actions/element');
+const Element = require('../elements/element');
 
 class SignInPage {
     constructor(){
         this.emailField = new Element('Email field', "//*[@id='username']");
-        this.nextButton = new Element('Button "Next"', "//*[@type='submit']");
+        this.nextButton = new Element('Button "Next"', "(//*[@type='submit'])[1]");
         this.passwordField = new Element('Password field', "//*[@id='password']");
-        this.signInButton = new Element('Button "Sign In"', "//*[@type='submit']");
+        this.signInButton = new Element('Button "Sign In"', "(//*[@type='submit'])[1]");
         this.loginErrorMessade = new Element('Login Error message', "//*[@id='username-error']");
         this.passwordErrorMessade = new Element('Password Error message', "//*[@id='password-error']");
     };

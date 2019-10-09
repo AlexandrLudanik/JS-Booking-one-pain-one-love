@@ -1,5 +1,5 @@
-const Element = require('../actions/element');
-const Collection = require('../actions/collection');
+const Element = require('../elements/element');
+const Collection = require('../elements/collection');
 
 class SearchPage {
     constructor() {

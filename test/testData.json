@@ -1,0 +1,8 @@
+{
+  "login": "sysrq08884@mail.ru",
+  "password": "Testbooking",
+  "city": "Minsk",
+  "hotel": "Hotel Minsk",
+  "expectNumberOfRooms": 3,
+  "expectNumberOfHotels": 3
+}

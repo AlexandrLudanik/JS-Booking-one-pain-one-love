@@ -1,5 +1,5 @@
 const BasePage = require('../base_page/basePage');
-const Element = require('../actions/element');
+const Element = require('../elements/element');
 
 class HomePage extends BasePage {
     constructor() {
